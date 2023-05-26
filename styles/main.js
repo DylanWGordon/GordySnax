@@ -10,6 +10,7 @@ function btnsAndPages() {
     function expandFunc(expandBtn, obj) {
         //expand button
         expandBtn.addEventListener('click', () => {
+            console.log(obj)
             let titleDiv = document.createElement('div');
             titleDiv.id = 'titleDiv';
             popup.append(titleDiv);
@@ -206,11 +207,20 @@ function btnsAndPages() {
             'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
         }
     };
-
+    var checkbox = document.querySelector('#glutenSwitch');
+    console.log(checkbox)
+    let glutenFree;
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        glutenFree = `&intolerances=gluten`
+      } else {
+        glutenFree=``
+      }
+    });
     //search button ajax on click; Clear homePage, add Thumbs
     searchBtn.addEventListener('click', async function () {
         homePage.innerHTML= ''
-        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchBar.value}&intolerances=gluten&excludeIngredients=eggs&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=popularity&sortDirection=asc&offset=0&number=10&limitLicense=false&ranking=2`;
+        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchBar.value}${glutenFree}&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&sort=popularity&sortDirection=asc&offset=0&number=10&limitLicense=false&ranking=2`;
             const response = await fetch(url, options);
             const result = await response.json();
             makeThumbs(homePage, result['results'], '#homePh')
@@ -232,15 +242,21 @@ function btnsAndPages() {
         //Favorites:
          else if (tabBtns[i].id == 'likedBtn') {
             targetPage = favoritesPage; 
-            favoritesPage.innerHTML=''
+            if(favoritesArray.length != 0){
+                favoritesPage.innerHTML=''
+            }
             makeThumbs(favoritesPage, favoritesArray, '#likedPh')
+            
+            
         }
         //ToDo:
         else if (tabBtns[i].id == 'toDoBtn') {
-            targetPage = toDoPage
-            toDoPage.innerHTML=''
-            makeThumbs(toDoPage, toDoArray, '#toDoPh')  
-            console.log(toDoArray)
+            targetPage = toDoPage;
+            if(toDoArray.length != 0){
+                toDoPage.innerHTML= ''
+            }
+            makeThumbs(toDoPage, toDoArray, '#toDoPh') 
+           
     }
 
                 //Return button if display=true

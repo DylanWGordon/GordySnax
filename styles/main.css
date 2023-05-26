@@ -9,7 +9,7 @@ body{
 
 div#nav{
     background-image: url(./bannerFood.png);
-    background-size:contain;
+    background-size:cover;
     outline:1px black solid;
     width:100%;
     height:20vh;
@@ -17,6 +17,7 @@ div#nav{
     align-content:end;
     flex-flow: row wrap;
     min-height: 100px;
+    border-bottom:3px solid white;
 }
 
         div#tabs{
@@ -31,6 +32,7 @@ div#nav{
 
             button.tablinks{
                 width:25%;
+                font-size:60%;
                 border-width:1px;
                 border-bottom-right-radius:0;
                 border-top-right-radius:30%;
@@ -40,30 +42,61 @@ div#nav{
             width:40%
         }
 
+        input#glutenSwitch{
+
+        }
+        p{
+            height:100%;
+            width:70%;
+            background-image:url(scrollWood.jpg);
+            background-size:contain;
+            margin:0;
+            border:1px solid black;
+        }
         div#searchDiv{
             display:flex;
+            flex-flow: column;
             align-content:bottom;
             justify-content:center;
-            height:17%;
+            height:40%;
             width:30%;
             justify-self:right;
             margin:0.5%;
             min-height: 20px;
+            margin:0;
         }
-
+        div#toggle{
+            height:50%;
+            width:100%;
+            display:flex;
+            flex-flow:row;
+            margin:0;
+        }
+        div#searchBarBtn{
+            height:50%;
+            width:100%;
+            display:flex;
+            flex-flow:row;
+            margin:0;
+        }
             button#searchBtn{
                 height: 100%;
-                width:14%; 
+                width:30%; 
                 font-size: 70%;
             }
 
             input#searchBar{
-                height:99%;
-                width:86%;
+                height:100%;
+                width:70%;
+                background-image: url(./scrollWood.jpg);
+                background-size:cover;
             }
 
 div#bodyContent{
-    background-color:burlywood;
+    background-image:url(./ashChevron.jpg);
+    background-size:contain;
+    background-repeat: repeat;
+    border-top:3px solid white;
     display:flex;
     width:100%;
     height:fit-content;    
@@ -76,7 +109,9 @@ div.main{
 
 div.display{
     
-    background-color:darksalmon;
+    background-image:url(scrollWood2.jpg);
+    background-size:contain;
+    background-repeat:repeat;
     width:70%;
     max-width:600px;
     height:fit-content;
@@ -85,8 +120,8 @@ div.display{
     flex-flow:column;
     align-self:center;
     margin:auto;
-    border-left:2px solid black;
-    border-right:2px solid black;
+    border-left:2px solid white;
+    border-right:2px solid white;
     justify-content:center
 }
 
@@ -166,7 +201,9 @@ ul#ingredients{
 div#thumbnailDiv{
     width:100%;
     display:flex;
-    flex-flow:row
+    flex-flow:row;
+    background-color:burlywood;
+    border:1px solid black;
 }
 
 
@@ -211,7 +248,14 @@ div#expanded{
     align-self:center;
     margin:auto;
     align-content:center
-    
+}
+div#left{
+    background-image:url(scrollWood2.jpg);
+    background-size:contain;    
+}
+div#right{
+    background-image:url(scrollWood2.jpg);
+    background-size:contain;    
 }
 ul#dietInfo{
     width:100%;
@@ -257,7 +301,8 @@ div#dietIng{
 
 h4{
     margin:0px;
-    background-color:lightpink;
+    background-image:url(scrollWood.jpg);
+    background-size:contain;
     text-align:center;
 }
 
@@ -270,6 +315,7 @@ ul{
 div#stepDiv{
     background-color:blanchedalmond;
     min-height:70%;
+    outline:1px solid black;
 }
 div#right{
     flex-flow:column;
@@ -291,7 +337,7 @@ div#homePage {
 height:20%;
 align-self:auto;
 margin:10%;
-font-size:70%;
+font-size:60%;
 text-overflow: ellipsis;
   }
 
