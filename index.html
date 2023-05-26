@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GordySnax</title>
+    <link rel="styleSheet" href="./styles/main.css" </head>
+
+<body>
+    <div id="nav">
+        <div id="tabs">
+            <button class="tablinks" id="homeBtn">Home</button>
+            <button class="tablinks" id="likedBtn">Favorites</button>
+            <button class="tablinks" id="toDoBtn">To-do</button>
+        </div>
+        <div id="spacerDiv"></div>
+        <div id="searchDiv">
+            <input type="search" id="searchBar">
+            <button id="searchBtn">Search</button>
+        </div>
+    </div>
+
+
+    <div id="bodyContent">
+        <div class="main display" id="homePage">
+            <div class="placeHolder" id="homePh">There's nothing on your plate yet. Try searching a recipe!
+                <div id="phPlate">
+                    <img class="plate" src="./styles/pngegg.png">
+                </div>
+            </div>
+        </div>
+        <div class="main" id="toDoPage">
+            <div class="placeHolder" id="toDoPh">There's nothing on your ToDo list yet. Add some recipes! </div>
+</div>
+        <div class="main" id="favoritesPage">
+            <div class="placeHolder" id="likedPh">There's nothing on your favorites list yet. Add some recipes! </div>
+        </div>
+        <div class="main" id="popup">
+        </div>
+    </div>
+
+</body>
+<script src="./styles/main.js"></script>
+
+</html>
