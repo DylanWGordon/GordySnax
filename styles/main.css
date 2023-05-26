@@ -42,9 +42,7 @@ div#nav{
             width:40%
         }
 
-        input#glutenSwitch{
-
-        }
+        
         p{
             height:100%;
             width:70%;
@@ -202,7 +200,7 @@ div#thumbnailDiv{
     width:100%;
     display:flex;
     flex-flow:row;
-    background-color:burlywood;
+    background-color:blanchedalmond;
     border:1px solid black;
 }
 
